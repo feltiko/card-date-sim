@@ -1,14 +1,13 @@
 import Phaser from 'phaser';
 
-import SimpleSprite from '../Classes/SimpleSprite';
 import Button from '../Classes/UI/Button';
 import Factory from '../Classes/Factory'
 
 export default class extends Phaser.Scene {
   constructor () {
-    super();
-
-    this.simpleImage = null;
+    super({
+      key: 'Boot'
+    });
     this.startButton = null;
   }
 
@@ -18,17 +17,13 @@ export default class extends Phaser.Scene {
 
   preload () {
     console.log('preload');
-    this.load.image('card', '../Assets/images/sprite.png');
+    /** Load all assets */
+    this.load.image('card', '../Assets/images/card.png');
+    this.load.image('deck', '../Assets/images/deck.png');
+    this.load.image('woman', '../Assets/images/woman.png');
   }
 
   create () {
-    this.simpleImage = new SimpleSprite({
-      scene: this,
-      x: 200,
-      y: 300,
-      sprite: 'card',
-    });
-
     const factory = new Factory();
     const cards = factory.runFactory();
     console.log(cards);
@@ -42,11 +37,10 @@ export default class extends Phaser.Scene {
         backgroundColor: '#f0f',
       },
       handler: (pointer, button) => {
-        console.log('start game');
+        this.scene.start('Game');
       }
     });
 
-    this.add.existing(this.simpleImage);
     this.add.existing(this.startButton);
     
     this.input.on('gameobjectup', this.btnHandler, this);
@@ -64,6 +58,5 @@ export default class extends Phaser.Scene {
   }
 
   update(time, delta) {
-    // this.simpleText.update(time, delta);
   }
 }
