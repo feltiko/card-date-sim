@@ -4,7 +4,7 @@
     "title": "Go oo restaurant",
     "description": "description",
     "type": "standard",
-    "image": "src/Assets/images/sprite.png",
+    "image": "../Assets/images/sprite.png",
     "effect": {
       "whore": 10,
       "rich": 5,
@@ -18,7 +18,7 @@
     "title": "Go to cinema",
     "description": "description",
     "type": "standard",
-    "image": "src/Assets/images/sprite.png",
+    "image": "../Assets/images/sprite.png",
     "effect": {
       "whore": 0,
       "rich": -5,
@@ -32,26 +32,26 @@
     "title": "Watch Evil Arthas on Twith TV",
     "description": "description",
     "type": "standard",
-    "image": "src/Assets/images/sprite.png",
+    "image": "../Assets/images/sprite.png",
     "effect": {
       "whore": -20,
       "rich": -50,
-      "wineWoman": -10,
-      "banditWoman": 20
+      "wine": -10,
+      "bandit": 20
     }
   },
 
-  "goToRestaurant": {
-    "id": "goToRestaurant",
-    "title": "Go oo restaurant",
+  "goToTheatre": {
+    "id": "goToTheatre",
+    "title": "Go to Theatre",
     "description": "description",
     "type": "standard",
-    "image": "src/Assets/images/sprite.png",
+    "image": "../Assets/images/sprite.png",
     "effect": {
-      "whore": 10,
+      "whore": 5,
       "rich": 5,
-      "wineWoman": 5,
-      "banditWoman": -5
+      "wine": 15,
+      "bandit": -20
     }
   },
 
@@ -60,12 +60,12 @@
     "title": "To give the IPhone",
     "description": "description",
     "type": "standard",
-    "image": "src/Assets/images/sprite.png",
+    "image": "../Assets/images/sprite.png",
     "effect": {
       "whore": 25,
       "rich": 5,
-      "wineWoman": -15,
-      "banditWoman": 5
+      "wine": -15,
+      "bandit": 5
     }
   },
 
@@ -74,12 +74,12 @@
     "title": "Go drunk in party",
     "description": "description",
     "type": "standard",
-    "image": "src/Assets/images/sprite.png",
+    "image": "../Assets/images/sprite.png",
     "effect": {
       "whore": 10,
       "rich": -20,
-      "wineWoman": 10,
-      "banditWoman": 20
+      "wine": 10,
+      "bandit": 20
     }
   },
 
@@ -88,12 +88,12 @@
     "title": "Go Drunk In Bar",
     "description": "description",
     "type": "standard",
-    "image": "src/Assets/images/sprite.png",
+    "image": "../Assets/images/sprite.png",
     "effect": {
       "whore": 10,
       "rich": 10,
-      "wineWoman": 10,
-      "banditWoman": 10
+      "wine": 10,
+      "bandit": 10
     }
   },
 
@@ -102,12 +102,12 @@
     "title": "Talk About Kafka",
     "description": "description",
     "type": "standard",
-    "image": "src/Assets/images/sprite.png",
+    "image": "../Assets/images/sprite.png",
     "effect": {
       "whore": -10,
       "rich": -10,
-      "wineWoman": 20,
-      "banditWoman": -20
+      "wine": 20,
+      "bandit": -20
     }
   },
 
@@ -116,12 +116,12 @@
     "title": "Go to the shop",
     "description": "description",
     "type": "standard",
-    "image": "src/Assets/images/sprite.png",
+    "image": "../Assets/images/sprite.png",
     "effect": {
       "whore": 10,
       "rich": 5,
-      "wineWoman": 5,
-      "banditWoman": -5
+      "wine": 5,
+      "bandit": -5
     }
   },
 
@@ -130,12 +130,12 @@
     "title": "Go to park",
     "description": "description",
     "type": "standard",
-    "image": "src/Assets/images/sprite.png",
+    "image": "../Assets/images/sprite.png",
     "effect": {
       "whore": -5,
       "rich": -5,
-      "wineWoman": 10,
-      "banditWoman": 5
+      "wine": 10,
+      "bandit": 5
     }
   }
 }
