@@ -20,7 +20,9 @@ export default class Factory {
     const womanKeys = Object.keys(womanData);
 
     this.cards = cardKeys.map(
-      (value, index) => new Card({
+      (value, index) => {
+        console.log(cardsData[value].image);
+       return new Card({
         scene,
         x: 0,
         y: 0,
@@ -32,6 +34,7 @@ export default class Factory {
         type: cardsData[value].type,
         effect: cardsData[value].effect
       })
+    }
     );
 
     this.woman = womanKeys.map(

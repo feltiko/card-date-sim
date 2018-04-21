@@ -18,25 +18,27 @@ export default class extends Phaser.GameObjects.Sprite {
     this.deck = cards;
   }
 
-  getCards(length) {
+  getCards (length) {
     let cards = [];
 
     if (length < this.deck.length){
       for (let i = 0; i < length; i++){
-        cards = this.deck.pop();
+        cards.push(this.deck.pop());
       }
 
       return cards;
     } else if (this.deck.length > 0) {
       for (let i = 0; i < this.deck.length; i++){
-        cards = this.deck.pop();
+        cards.push(this.deck.pop());
       }
+      
+      return cards;
     } else {
       //gameOver
     }
   }
 
-  shuffle(){
+  shuffle (){
     let currentIndex = array.length,
       temporaryValue,
       randomIndex;
@@ -53,7 +55,7 @@ export default class extends Phaser.GameObjects.Sprite {
     }
   }
 
-  playSound() {
+  playSound () {
 
   }
 

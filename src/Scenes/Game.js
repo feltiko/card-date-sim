@@ -1,5 +1,5 @@
 import Phaser from 'phaser';
-import SimpleSprite from '../Classes/SimpleSprite';
+import Factory from '../Classes/Factory';
 
 import Deck from '../Classes/Deck';
 import Woman from '../Classes/Woman';
@@ -11,7 +11,6 @@ export default class extends Phaser.Scene {
       key: 'Game'
     });
 
-    this.simpleImage = null;
     this.gameObjects = {
       deck: null,
       woman: null,
@@ -25,29 +24,38 @@ export default class extends Phaser.Scene {
 
   preload () {
     console.log('preload');
+    console.log('_________________________');
   }
+
+  getRandomInt (max, min) { return Math.round(Math.random() * (max - min) + min); }
 
   create (props) {
     const scene = this;
-    this.simpleImage = new SimpleSprite({ scene, x: 500, y: 500, sprite: 'card' });
-    this.gameObjects.deck = new Deck({ scene, x: 150, y: 500, sprite: 'deck' });
-    // this.gameObjects.hand = new Hand({ scene, x: 200, y: 300, sprite: 'card' });
-    this.gameObjects.woman = new Woman(
+    const factory = new Factory(this);
+    let { deck, hand, woman } = this.gameObjects;
+
+    deck = new Deck({ scene, x: 150, y: 500, sprite: 'deck' });
+    hand = new Hand({ scene, x: 200, y: 300, sprite: 'card' });
+    woman = new Woman(
       { scene, x: 1200 * 0.5, y: 200, sprite: 'woman' }, 
       { id: 1, type: 'whore', }
     );
 
-    console.log(props);
+    woman.scaleX = 0.2;
+    woman.scaleY = 0.2;
 
-    this.gameObjects.woman.scaleX = 0.2;
-    this.gameObjects.woman.scaleY = 0.2;
+    deck.fillDeck(
+      [...new Array(10)].map(
+        (value, index) => factory.cards[this.getRandomInt(0, factory.cards.length - 1)]
+      )
+    );
 
-
-
+    const drawedCards = deck.getCards(3);
+    hand.setHand(drawedCards);
+    hand.renderHand();
     // TODO: recursivly add all gameobjects
-    this.add.existing(this.gameObjects.deck);
-    this.add.existing(this.simpleImage);
-    this.add.existing(this.gameObjects.woman);
+    this.add.existing(deck);
+    this.add.existing(woman);
 
     this.input.on('gameobjectup', this.btnHandler, this);
   }
@@ -56,7 +64,7 @@ export default class extends Phaser.Scene {
     if (!item.id) return null;
 
     if (item.id === 'deck') {
-      console.log(item.id);
+      console.log(item);
     }
   }
 

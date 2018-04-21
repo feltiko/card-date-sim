@@ -1,7 +1,6 @@
 import Phaser from 'phaser';
 
 import Button from '../Classes/UI/Button';
-import Factory from '../Classes/Factory'
 
 export default class extends Phaser.Scene {
   constructor () {
@@ -25,7 +24,6 @@ export default class extends Phaser.Scene {
   }
 
   create () {
-    const factory = new Factory(this);
     this.startButton = new Button({
       scene: this,
       id: 'startBtn',
@@ -36,9 +34,7 @@ export default class extends Phaser.Scene {
         backgroundColor: '#f0f',
       },
       handler: (pointer, button) => {
-        this.scene.start('Game', {
-          factory,
-        });
+        this.scene.start('Game');
       }
     });
 
