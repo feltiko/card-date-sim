@@ -52,9 +52,6 @@ export default class extends Phaser.GameObjects.Sprite {
   }
 
   update (time, delta) {
-    this.x += 20 / delta * this.dir;
 
-    if (this.x > 300) this.dir = -1;
-    else if (this.x < 50) this.dir = 1;
   }
 }
