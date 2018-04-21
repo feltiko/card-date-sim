@@ -2,6 +2,7 @@ import Phaser from 'phaser';
 
 import SimpleText from '../Classes/SimpleText';
 import SimpleSprite from '../Classes/SimpleSprite';
+import Button from '../Classes/UI/Button';
 
 export default class extends Phaser.Scene {
   constructor () {
@@ -9,6 +10,7 @@ export default class extends Phaser.Scene {
 
     this.simpleText = null;
     this.simpleImage = null;
+    this.startButton = null;
   }
 
   init () {
@@ -17,33 +19,61 @@ export default class extends Phaser.Scene {
 
   preload () {
     console.log('preload');
-    this.load.image('card', '../Assets/images/sprite.png');
-    
+    // this.load.image('card', '../Assets/images/sprite.png');
   }
 
   create () {
-    this.simpleText = new SimpleText({
+    // this.simpleText = new SimpleText({
+    //   scene: this,
+    //   x: 60,
+    //   y: 70,
+    //   text: 'Simple text',
+    //   styles: {
+    //     backgroundColor: '#f0f',
+    //   },
+    // });
+
+    // this.simpleImage = new SimpleSprite({
+    //   scene: this,
+    //   x: 200,
+    //   y: 300,
+    //   sprite: 'card',
+    // });
+
+    this.startButton = new Button({
       scene: this,
-      x: 60,
+      id: 'startBtn',
+      x: 55,
       y: 70,
-      text: 'Simple text',
+      text: 'Start game',
       styles: {
         backgroundColor: '#f0f',
       },
+      handler: (pointer, button) => {
+        console.log('start game');
+      }
     });
 
-    this.simpleImage = new SimpleSprite({
-      scene: this,
-      x: 200,
-      y: 300,
-      sprite: 'card',
-    });
+    // this.add.existing(this.simpleText);
+    this.add.existing(this.startButton);
+    // this.add.existing(this.simpleImage);
+    // console.log(this.simpleImage.input);
+    
+    this.input.on('gameobjectup', this.btnHandler, this);
+  }
 
-    this.add.existing(this.simpleText);
-    this.add.existing(this.simpleImage);
+  btnHandler (pointer, item) {
+    if (!item.id) return;
+
+    switch (item.id) {
+      case 'startBtn': 
+          this.startButton.handler(pointer, item);
+        break;
+      default: return;
+    }
   }
 
   update(time, delta) {
-    this.simpleText.update(time, delta);
+    // this.simpleText.update(time, delta);
   }
 }

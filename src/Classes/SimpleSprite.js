@@ -8,6 +8,8 @@ export default class extends Phaser.GameObjects.Sprite {
       config.y,
       config.sprite,
     );
+
+    this.setInteractive();
   }
 
   update (time, delta) {
