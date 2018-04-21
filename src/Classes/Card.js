@@ -14,6 +14,7 @@ export default class extends Phaser.GameObjects.Sprite{
     this.description = params.description;
     this.type = params.type;
     this.effect = params.effect;
+    this.order = -1;
 
     this.setInteractive();
   }
@@ -29,6 +30,7 @@ export default class extends Phaser.GameObjects.Sprite{
   setTitle(value) {
     this.title = value;
   }
+
   getDescription() {
     return this.description;
   }

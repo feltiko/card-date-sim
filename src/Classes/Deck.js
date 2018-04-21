@@ -18,6 +18,7 @@ export default class extends Phaser.GameObjects.Sprite {
     this.deck = cards;
   }
 
+  // TODO: works worng, sometimes return a undefined
   getCards (length) {
     let cards = [];
 

@@ -10,10 +10,10 @@ export default class extends Phaser.GameObjects.Sprite {
     );
 
     this.hand = [];
-    this.positions = [
-      { x: 1280 * 0.5 - 200, y: 500 },
-      { x: 1280 * 0.5, y: 500 },
-      { x: 1280 * 0.5 + 200, y: 500 },
+    this.settings = [
+      { order: 0, x: 1280 * 0.5 - 200, y: 500 },
+      { order: 1, x: 1280 * 0.5, y: 500 },
+      { order: 2, x: 1280 * 0.5 + 200, y: 500 },
     ];
   }
 
@@ -26,22 +26,35 @@ export default class extends Phaser.GameObjects.Sprite {
   }
 
   renderHand () {
-    const { scene, hand, positions } = this;
+    const { scene, hand, settings } = this;
 
     hand.forEach((value, index) => {
-      value.x = positions[index].x;
-      value.y = positions[index].y;
+      value.x = settings[index].x;
+      value.y = settings[index].y;
+      value.order = settings[index].order;
 
       scene.add.existing(value)
     });
   }
 
-  getElemById (id) {
-    return this.hand[index];
+  getElemByOrder (order) {
+    return this.hand[order];
   }
 
-  setElemById (id, value) {
-    this.hand[index] = value;
+  setElemByOrder (order, value) {
+    this.hand[order] = value;
+  }
+
+  removeCards () {
+    this.hand.forEach((value, index) => value.destroy());
+    this.hand = [];
+  }
+
+  useCard (order, womanType) {
+    const effectValue = this.hand[order].effect[womanType];
+    this.removeCards();
+
+    return effectValue;
   }
 
   playSound () {
