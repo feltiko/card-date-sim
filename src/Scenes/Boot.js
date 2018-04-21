@@ -8,6 +8,7 @@ export default class extends Phaser.Scene {
     super({
       key: 'Boot'
     });
+
     this.startButton = null;
   }
 
@@ -25,7 +26,7 @@ export default class extends Phaser.Scene {
 
   create () {
     const factory = new Factory(this);
-    console.log(factory);
+
     this.startButton = new Button({
       scene: this,
       id: 'startBtn',
@@ -36,7 +37,9 @@ export default class extends Phaser.Scene {
         backgroundColor: '#f0f',
       },
       handler: (pointer, button) => {
-        this.scene.start('Game');
+        this.scene.start('Game', {
+          factory,
+        });
       }
     });
 

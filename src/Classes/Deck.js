@@ -14,6 +14,10 @@ export default class extends Phaser.GameObjects.Sprite {
     this.setInteractive();
   }
 
+  fillDeck (cards) {
+    this.deck = cards;
+  }
+
   getCards(length) {
     let cards = [];
 

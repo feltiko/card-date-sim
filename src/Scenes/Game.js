@@ -27,23 +27,22 @@ export default class extends Phaser.Scene {
     console.log('preload');
   }
 
-  create () {
-    console.log('create');
+  create (props) {
     const scene = this;
-    console.log(scene.game);
     this.simpleImage = new SimpleSprite({ scene, x: 500, y: 500, sprite: 'card' });
     this.gameObjects.deck = new Deck({ scene, x: 150, y: 500, sprite: 'deck' });
+    // this.gameObjects.hand = new Hand({ scene, x: 200, y: 300, sprite: 'card' });
     this.gameObjects.woman = new Woman(
       { scene, x: 1200 * 0.5, y: 200, sprite: 'woman' }, 
       { id: 1, type: 'whore', }
     );
 
+    console.log(props);
+
     this.gameObjects.woman.scaleX = 0.2;
     this.gameObjects.woman.scaleY = 0.2;
 
-    console.log(this.gameObjects.woman);
 
-    // this.gameObjects.hand = new Hand({ scene, x: 200, y: 300, sprite: 'card' });
 
     // TODO: recursivly add all gameobjects
     this.add.existing(this.gameObjects.deck);
