@@ -3,16 +3,18 @@ import Phaser from 'phaser';
 export default class extends Phaser.GameObjects.Sprite{
   constructor(config, params) {
     super(
-      config.scale,
+      config.scene,
       config.x,
       config.y,
       config.sprite
     );
-    const id = params.id;
+
+    this.id = params.id;
     this.title = params.title;
     this.description = params.description;
     this.type = params.type;
     this.effect = params.effect;
+
     this.setInteractive();
   }
 

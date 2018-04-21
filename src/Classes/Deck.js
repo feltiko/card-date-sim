@@ -3,27 +3,29 @@ import Phaser from 'phaser';
 export default class extends Phaser.GameObjects.Sprite {
   constructor(config) {
     super(
-      config.scale,
+      config.scene,
       config.x,
       config.y,
       config.sprite
     );
 
     this.deck = [];
+    this.id = 'deck';
+    this.setInteractive();
   }
 
   getCards(length) {
-    let hand = [];
+    let cards = [];
 
     if (length < this.deck.length){
-      for (let i = 0; i< length; i++){
-        hand = this.deck.pop();
+      for (let i = 0; i < length; i++){
+        cards = this.deck.pop();
       }
 
-      return hand;
+      return cards;
     } else if (this.deck.length > 0) {
       for (let i = 0; i < this.deck.length; i++){
-        hand = this.deck.pop();
+        cards = this.deck.pop();
       }
     } else {
       //gameOver
