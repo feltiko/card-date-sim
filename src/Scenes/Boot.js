@@ -1,16 +1,24 @@
 import Phaser from 'phaser';
 
 import SimpleText from '../Classes/SimpleText';
+import SimpleSprite from '../Classes/SimpleSprite';
 
 export default class extends Phaser.Scene {
   constructor () {
     super();
 
     this.simpleText = null;
+    this.simpleImage = null;
   }
 
   init () {
     console.log('init');
+  }
+
+  preload () {
+    console.log('preload');
+    this.load.image('card', '../Assets/images/sprite.png');
+    
   }
 
   create () {
@@ -24,11 +32,16 @@ export default class extends Phaser.Scene {
       },
     });
 
-    this.add.existing(this.simpleText);
-  }
+    this.simpleImage = new SimpleSprite({
+      scene: this,
+      x: 200,
+      y: 300,
+      sprite: 'card',
+    });
 
-  preload () {
-    console.log('preload');
+
+    this.add.existing(this.simpleText);
+    this.add.existing(this.simpleImage);
   }
 
   update(time, delta) {
