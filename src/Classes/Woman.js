@@ -1,13 +1,16 @@
 import Phaser from 'phaser';
 
 export default class extends Phaser.GameObjects.Sprite {
-  constructor (config) {
+  constructor (config, params) {
     super(
       config.scale,
       config.x,
       config.y,
       config.sprite
     );
+    const id = params.id;
+    const type = params.type;
+    this.setInteractive();
   }
 
   playSound(){
@@ -15,9 +18,6 @@ export default class extends Phaser.GameObjects.Sprite {
   }
 
   update (time, delta) {
-    this.x += 20 / delta * this.dir;
 
-    if (this.x > 300) this.dir = -1;
-    else if (this.x < 50) this.dir = 1;
   }
 }
