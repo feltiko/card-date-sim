@@ -7,7 +7,6 @@ export default class extends Phaser.Scene {
   constructor () {
     super();
 
-    this.simpleText = null;
     this.simpleImage = null;
     this.startButton = null;
   }

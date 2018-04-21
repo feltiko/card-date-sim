@@ -1,0 +1,10 @@
+{
+  "testCardId": { 
+    "id": "testCardId", 
+    "name": "cardName", 
+    "value": {
+      "whore": 15,
+      "rich": -30
+    }
+  }
+}
