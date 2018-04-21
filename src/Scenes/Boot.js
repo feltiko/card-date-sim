@@ -2,6 +2,7 @@ import Phaser from 'phaser';
 
 import SimpleSprite from '../Classes/SimpleSprite';
 import Button from '../Classes/UI/Button';
+import Factory from '../Classes/Factory'
 
 export default class extends Phaser.Scene {
   constructor () {
@@ -28,6 +29,9 @@ export default class extends Phaser.Scene {
       sprite: 'card',
     });
 
+    const factory = new Factory();
+    const cards = factory.runFactory();
+    console.log(cards);
     this.startButton = new Button({
       scene: this,
       id: 'startBtn',
