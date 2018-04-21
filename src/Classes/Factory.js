@@ -3,29 +3,30 @@ import Card from "../Classes/Card";
 
 export default class Factory {
   constructor (scene) {
-    this.cards  =  jsonCards;
+    this.cardsData = jsonCards;
     this.scene = scene;
+    this.cards = null;
+
+    this.runFactory();
   }
 
   runFactory() {
-    let cards = [];
-    for (let key in this.cards) {
-      let item = this.cards[key];
-      console.log(item.effect);
-      let card = new Card({
-        scene: this.scene,
+    const { cardsData, scene } = this;
+    const keys = Object.keys(cardsData);
+
+    this.cards = keys.map(
+      (value, index) => new Card({
+        scene,
         x: 0,
         y: 0,
-        sprite: item.image
+        sprite: cardsData[value].image
       }, {
-        id: item.id,
-        title: item.title,
-        description: item.description,
-        type: item.type,
-        effect: item.effect
-      });
-      cards.push(card);
-    }
-    return cards;
+        id: cardsData[value].id,
+        title: cardsData[value].title,
+        description: cardsData[value].description,
+        type: cardsData[value].type,
+        effect: cardsData[value].effect
+      })
+    );
   }
 }
