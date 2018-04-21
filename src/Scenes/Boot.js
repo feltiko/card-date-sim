@@ -25,7 +25,7 @@ export default class extends Phaser.Scene {
 
   create () {
     const factory = new Factory(this);
-    console.log(factory);
+    console.log(factory.woman);
     this.startButton = new Button({
       scene: this,
       id: 'startBtn',

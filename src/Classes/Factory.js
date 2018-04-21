@@ -1,7 +1,7 @@
 import jsonCards from "../Data/cards.json";
 import jsonWoman from "../Data/woman.json";
 import Card from "../Classes/Card";
-import Card from "../Classes/Woman";
+import Woman from "../Classes/Woman";
 
 export default class Factory {
   constructor (scene) {
@@ -39,10 +39,10 @@ export default class Factory {
         scene,
         x: 0,
         y: 0,
-        sprite: cardsData[value].image
+        sprite: womanData[value].image
         }, {
-        id: cardsData[value].id,
-        type: cardsData[value].type
+        id: womanData[value].id,
+        type: womanData[value].type
       })
     );
   }
