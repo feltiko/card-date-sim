@@ -1,0 +1,25 @@
+{
+  "whore": {
+    "id": "whore",
+    "type": "whore",
+    "image": "src/Assets/images/sprite.png"
+  },
+
+  "rich": {
+    "id": "whore",
+    "type": "whore",
+    "image": "src/Assets/images/sprite.png"
+  },
+
+  "wine": {
+    "id": "whore",
+    "type": "whore",
+    "image": "src/Assets/images/sprite.png"
+  },
+
+  "bandit": {
+    "id": "whore",
+    "type": "whore",
+    "image": "src/Assets/images/sprite.png"
+  }
+}

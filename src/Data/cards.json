@@ -1,10 +1,141 @@
 {
-  "testCardId": { 
-    "id": "testCardId", 
-    "name": "cardName", 
-    "value": {
-      "whore": 15,
-      "rich": -30
+  "goToRestaurant": {
+    "id": "goToRestaurant",
+    "title": "Go oo restaurant",
+    "description": "description",
+    "type": "standard",
+    "image": "src/Assets/images/sprite.png",
+    "effect": {
+      "whore": 10,
+      "rich": 5,
+      "wine": 5,
+      "bandit": -5
+    }
+  },
+
+  "goToCinema": {
+    "id": "goToCinema",
+    "title": "Go to cinema",
+    "description": "description",
+    "type": "standard",
+    "image": "src/Assets/images/sprite.png",
+    "effect": {
+      "whore": 0,
+      "rich": -5,
+      "wine": 15,
+      "bandit": -5
+    }
+  },
+
+  "watchEvilArthas": {
+    "id": "watchEvilArthas",
+    "title": "Watch Evil Arthas on Twith TV",
+    "description": "description",
+    "type": "standard",
+    "image": "src/Assets/images/sprite.png",
+    "effect": {
+      "whore": -20,
+      "rich": -50,
+      "wineWoman": -10,
+      "banditWoman": 20
+    }
+  },
+
+  "goToRestaurant": {
+    "id": "goToRestaurant",
+    "title": "Go oo restaurant",
+    "description": "description",
+    "type": "standard",
+    "image": "src/Assets/images/sprite.png",
+    "effect": {
+      "whore": 10,
+      "rich": 5,
+      "wineWoman": 5,
+      "banditWoman": -5
+    }
+  },
+
+  "toGiveIPhone": {
+    "id": "toGiveIPhone",
+    "title": "To give the IPhone",
+    "description": "description",
+    "type": "standard",
+    "image": "src/Assets/images/sprite.png",
+    "effect": {
+      "whore": 25,
+      "rich": 5,
+      "wineWoman": -15,
+      "banditWoman": 5
+    }
+  },
+
+  "goDrunkInParty": {
+    "id": "goDrunkInParty",
+    "title": "Go drunk in party",
+    "description": "description",
+    "type": "standard",
+    "image": "src/Assets/images/sprite.png",
+    "effect": {
+      "whore": 10,
+      "rich": -20,
+      "wineWoman": 10,
+      "banditWoman": 20
+    }
+  },
+
+  "goDrunkInBar": {
+    "id": "goDrunkInBar",
+    "title": "Go Drunk In Bar",
+    "description": "description",
+    "type": "standard",
+    "image": "src/Assets/images/sprite.png",
+    "effect": {
+      "whore": 10,
+      "rich": 10,
+      "wineWoman": 10,
+      "banditWoman": 10
+    }
+  },
+
+  "talkAboutKafka": {
+    "id": "talkAboutKafka",
+    "title": "Talk About Kafka",
+    "description": "description",
+    "type": "standard",
+    "image": "src/Assets/images/sprite.png",
+    "effect": {
+      "whore": -10,
+      "rich": -10,
+      "wineWoman": 20,
+      "banditWoman": -20
+    }
+  },
+
+  "goToTheShop": {
+    "id": "GoToTheShop",
+    "title": "Go to the shop",
+    "description": "description",
+    "type": "standard",
+    "image": "src/Assets/images/sprite.png",
+    "effect": {
+      "whore": 10,
+      "rich": 5,
+      "wineWoman": 5,
+      "banditWoman": -5
+    }
+  },
+
+  "goToPark": {
+    "id": "goToPark",
+    "title": "Go to park",
+    "description": "description",
+    "type": "standard",
+    "image": "src/Assets/images/sprite.png",
+    "effect": {
+      "whore": -5,
+      "rich": -5,
+      "wineWoman": 10,
+      "banditWoman": 5
     }
   }
 }
