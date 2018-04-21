@@ -39,7 +39,6 @@ export default class extends Phaser.Scene {
       sprite: 'card',
     });
 
-
     this.add.existing(this.simpleText);
     this.add.existing(this.simpleImage);
   }
