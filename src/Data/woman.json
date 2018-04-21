@@ -2,24 +2,24 @@
   "whore": {
     "id": "whore",
     "type": "whore",
-    "image": "../Assets/images/sprite.png"
+    "image": "../Assets/images/woman1.png"
   },
 
   "rich": {
-    "id": "whore",
-    "type": "whore",
-    "image": "../Assets/images/sprite.png"
+    "id": "rich",
+    "type": "rich",
+    "image": "../Assets/images/woman2.png"
   },
 
   "wine": {
-    "id": "whore",
-    "type": "whore",
-    "image": "../Assets/images/sprite.png"
+    "id": "wine",
+    "type": "wine",
+    "image": "../Assets/images/woman3.png"
   },
 
   "bandit": {
-    "id": "whore",
-    "type": "whore",
-    "image": "../Assets/images/sprite.png"
+    "id": "bandit",
+    "type": "bandit",
+    "image": "../Assets/images/woman4.png"
   }
 }
