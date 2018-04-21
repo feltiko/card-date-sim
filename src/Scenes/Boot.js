@@ -1,6 +1,6 @@
 import Phaser from 'phaser';
 
-import SimpleText from '../Objects/SimpleText';
+import SimpleText from '../Classes/SimpleText';
 
 export default class extends Phaser.Scene {
   constructor () {
