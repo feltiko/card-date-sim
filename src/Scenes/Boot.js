@@ -64,7 +64,6 @@ export default class extends Phaser.Scene {
 
   btnHandler (pointer, item) {
     if (!item.id) return;
-    console.log(item.id);
     switch (item.id) {
       case 'startBtn': 
           this.startButton.handler(pointer, item);

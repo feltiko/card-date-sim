@@ -34,7 +34,7 @@ export default class extends Phaser.Scene {
   preload () {
     console.log('preload');
     console.log('_________________________');
-    this.load.image('background', '../Assets/images/backgroundmenu.png');
+    this.load.image('background', '../Assets/images/backgroundgame.png');
   }
 
 
@@ -110,8 +110,15 @@ export default class extends Phaser.Scene {
   }
 
   scoreCheck () {
-    if (this.sex >= 100) { console.log('win'); }
-    else if (this.sex <= 0) { console.log('lose'); }
+    console.log('LENGTH: '  + this.gameObjects.deck.length());
+    if (this.sex >= 100) {
+      this.scene.start('GameEnd', {data: true});
+    }
+    else if (this.sex <= 0) {
+      this.scene.start('GameEnd', {data: false});
+    } else if(this.gameObjects.deck.length() <= 3) {
+      this.scene.start('GameEnd', {data: false});
+    }
   }
 
   update (time, delta) {
