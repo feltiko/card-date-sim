@@ -20,6 +20,8 @@ export default class extends Phaser.Scene {
       hand: null,
       score: null,
       deckCount: null,
+      barGray: null,
+      barPink: null,
     };
 
     this.cardsCount = 0;
@@ -49,13 +51,18 @@ export default class extends Phaser.Scene {
 
     this.gameObjects.deck = new Deck({ scene, x: 150, y: 500, sprite: 'deck' });
     this.gameObjects.hand = new Hand({ scene, x: 200, y: 300, sprite: 'card' });
+    
+    const rndWoman = this.factory.woman[
+      Math.floor(Math.random() * this.factory.woman.length)
+    ];
+
     this.gameObjects.woman = new Woman(
-      { scene, x: 1200 * 0.5, y: 150, sprite: 'woman' }, 
-      { id: 1, type: 'whore', }
+      { scene, x: 1200 * 0.5, y: 150, sprite: rndWoman.texture.key }, 
+      { id: rndWoman.id, type: rndWoman.type, image: rndWoman.sprite }
     );
 
-    this.gameObjects.woman.scaleX = 0.2;
-    this.gameObjects.woman.scaleY = 0.2;
+    this.gameObjects.woman.scaleX = 0.8;
+    this.gameObjects.woman.scaleY = 0.8;
 
     this.gameObjects.deck.fillDeck(
       [...new Array(30)].map(
@@ -80,13 +87,42 @@ export default class extends Phaser.Scene {
 
     this.drawCards();
 
-    this.gameObjects.score = new Phaser.GameObjects.Text(this, 50, 50, this.sex);
-    this.gameObjects.deckCount = new Phaser.GameObjects.Text(this, 50, 70, this.cardsCount);
-    // TODO: recursivly add all gameobjects
+    this.gameObjects.score = new Phaser.GameObjects.Text(this, 50, 50, this.sex, {
+
+    });
+
+    this.gameObjects.deckCount = new Phaser.GameObjects.Text(this, 140, 450, this.cardsCount, {
+      color: '#FF1E52',
+      fontSize: '22px',
+      fixedWidth: '30px',
+      align: 'center',
+      fontFamily: 'Ourverture-script',
+    });
+
+    this.gameObjects.barGray = new Phaser.GameObjects.Sprite(
+      this,
+      1100,
+      720 * 0.5,
+      'bar'
+    );
+
+    this.gameObjects.barPink = new Phaser.GameObjects.Sprite(
+      this,
+      1100,
+      720 * 0.5,
+      'bar-fill'
+    );
+
+    this.gameObjects.barPink.originX = 0.5;
+    this.gameObjects.barPink.originY = 1;
+
+
+    this.gameObjects.woman.render();
     this.add.existing(this.gameObjects.deck);
-    this.add.existing(this.gameObjects.woman);
     this.add.existing(this.gameObjects.score);
     this.add.existing(this.gameObjects.deckCount);
+    this.add.existing(this.gameObjects.barGray);
+    this.add.existing(this.gameObjects.barPink);
 
     this.input.on('gameobjectup', (p, obj) => {
       if (obj.order !== -1) {
@@ -124,6 +160,9 @@ export default class extends Phaser.Scene {
   update (time, delta) {
     this.cardsCount = this.gameObjects.deck.length();
 
+    const x = (this.sex / 100) * 400 / 1000;
+    //Current Health / Max Health) * Max Size of Bar
+    this.gameObjects.barPink.scaleY = x;
     this.gameObjects.score.setText(this.sex);
     this.gameObjects.deckCount.setText(this.cardsCount);
 

@@ -38,8 +38,6 @@ export default class extends Phaser.GameObjects.Sprite {
           value.scene = value.scene;
         });
 
-        console.log(this.deck)
-
 	      return elem;
       });
     }
