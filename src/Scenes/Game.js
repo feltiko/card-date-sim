@@ -34,8 +34,9 @@ export default class extends Phaser.Scene {
   preload () {
     console.log('preload');
     console.log('_________________________');
-    this.load.image('background', '../Assets/images/backgroundgame.png');
+    this.load.image('background', '../Assets/images/backgroundmenu.png');
   }
+
 
   create (props) {
     const scene = this;

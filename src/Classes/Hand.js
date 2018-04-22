@@ -34,9 +34,7 @@ export default class extends Phaser.GameObjects.Sprite {
       value.order = settings[index].order;
       value.scene = this.scene;
       value.parentContainer = null;
-
-      const obj = this.scene.add.existing(value);
-      console.log(obj);
+      value.render();
     });
   }
 
@@ -49,7 +47,10 @@ export default class extends Phaser.GameObjects.Sprite {
   }
 
   removeCards () {
-    this.hand.forEach((value, index) => value.destroy());
+    this.hand.forEach((value, index) => { 
+      value.onDestroy();
+    });
+
     this.hand = [];
   }
 

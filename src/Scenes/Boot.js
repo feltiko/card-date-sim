@@ -20,6 +20,8 @@ export default class extends Phaser.Scene {
     this.load.image('deck', '../Assets/images/deck.png');
     this.load.image('woman', '../Assets/images/woman.png');
     this.load.image('background', '../Assets/images/backgroundmenu.png');
+    this.load.image('heart', '../Assets/images/heart.png');
+  
   }
 
   create () {

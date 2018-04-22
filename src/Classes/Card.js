@@ -16,6 +16,12 @@ export default class extends Phaser.GameObjects.Sprite {
     this.effect = params.effect;
     this.order = -1;
 
+    this.info = {
+      title: null,
+      image: null,
+      desc: null,
+    };
+
     this.setInteractive();
   }
 
@@ -25,6 +31,60 @@ export default class extends Phaser.GameObjects.Sprite {
 
   getTitle() {
     return this.title;
+  }
+
+  render () {
+    this.info.title = new Phaser.GameObjects.Text(
+      this.scene,
+      this.x - 200 * 0.5 + 20,
+      this.y - this.height / 2 + 15,
+      this.title,
+      {
+        color: '#FF1E52',
+        fontSize: '22px',
+        fixedWidth: '30px',
+        align: 'center',
+        fontFamily: 'Ourverture-script',
+      }
+    );
+
+    // this.info.title.x = /this.x;
+
+    this.info.image = new Phaser.GameObjects.Sprite(
+      this.scene,
+      this.x,
+      this.y - 30,
+      'heart'
+    );
+
+    this.info.desc = new Phaser.GameObjects.Text(
+      this.scene,
+      this.x - 200 * 0.5 + 20,
+      this.y + 60,
+      this.description,
+      {
+        align: 'center',
+        color: '#FF1E52',
+        fontSize: '18px',
+        fontFamily: 'Ourverture-script',
+        fixedWidth: 200,
+      }
+    );
+
+    console.log(this.info.desc);
+
+    this.scene.add.existing(this);
+    this.scene.add.existing(this.info.title);
+    this.scene.add.existing(this.info.image);
+    this.scene.add.existing(this.info.desc);
+
+  }
+
+  onDestroy () {
+    this.info.title.destroy();
+    this.info.image.destroy();
+    this.info.desc.destroy();
+    this.destroy();
   }
 
   setTitle(value) {
