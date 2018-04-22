@@ -42,17 +42,17 @@ export default class extends Phaser.Scene {
     });
     this.deckButton = new Button({
       scene: this,
-      id: 'startBtn',
+      id: 'deckBtn',
       x: 560,
       y: 300,
-      text: 'Deka',
+      text: 'Deck',
       styles: {
         color: '#FF1E52',
         fontSize: '36px',
         fontFamily: 'Ourverture-script',
       },
       handler: (pointer, button) => {
-        this.scene.start('Game');
+        this.scene.start('DeckScene');
       }
     });
     this.add.image(600, 360, 'background');
@@ -64,11 +64,14 @@ export default class extends Phaser.Scene {
 
   btnHandler (pointer, item) {
     if (!item.id) return;
-
+    console.log(item.id);
     switch (item.id) {
       case 'startBtn': 
           this.startButton.handler(pointer, item);
-        break;
+          break;
+      case 'deckBtn':
+          this.deckButton.handler(pointer, item);
+          break;
       default: return;
     }
   }
