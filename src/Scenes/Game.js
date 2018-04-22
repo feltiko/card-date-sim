@@ -79,6 +79,7 @@ export default class extends Phaser.Scene {
                 description: card.description,
                 type: card.type,
                 effect: card.effect,
+                icon: card.icon,
               },
             );
         }

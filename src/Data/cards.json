@@ -1,9 +1,10 @@
 {
   "goToRestaurant": {
     "id": "goToRestaurant",
-    "title": "Go oo restaurant",
-    "description": "description",
+    "title": "Сходить в ресторан",
+    "description": "Будет вкусно, женщины любят еду",
     "type": "standard",
+    "icon": "heart",
     "image": "card",
     "effect": {
       "whore": 10,
@@ -15,10 +16,11 @@
 
   "goToCinema": {
     "id": "goToCinema",
-    "title": "Go to cinema",
-    "description": "description",
+    "title": "Сводить в кинчик",
+    "description": "Только бы не мелодрама",
     "type": "standard",
     "image": "card",
+    "icon": "heart",
     "effect": {
       "whore": 0,
       "rich": -5,
@@ -29,10 +31,11 @@
 
   "watchEvilArthas": {
     "id": "watchEvilArthas",
-    "title": "Watch Evil Arthas on Twith TV",
-    "description": "description",
+    "title": "Посмотреть величайшего",
+    "description": "НЫА",
     "type": "standard",
     "image": "card",
+    "icon": "roflan",
     "effect": {
       "whore": -20,
       "rich": -50,
@@ -43,9 +46,10 @@
 
   "goToTheatre": {
     "id": "goToTheatre",
-    "title": "Go to Theatre",
-    "description": "description",
+    "title": "Сходить в театр",
+    "description": "Так культурно",
     "type": "standard",
+    "icon": "heart",
     "image": "card",
     "effect": {
       "whore": 5,
@@ -57,9 +61,10 @@
 
   "toGiveIPhone": {
     "id": "toGiveIPhone",
-    "title": "To give the IPhone",
-    "description": "description",
+    "title": "Подарить айфорн",
+    "description": "тот самый айфон, в надежде того самого",
     "type": "standard",
+    "icon": "heart",
     "image": "card",
     "effect": {
       "whore": 25,
@@ -71,9 +76,10 @@
 
   "goDrunkInParty": {
     "id": "goDrunkInParty",
-    "title": "Go drunk in party",
-    "description": "description",
+    "title": "Пойти бухать на тусу",
+    "description": "Мало ли она любит тусит?",
     "type": "standard",
+    "icon": "heart",
     "image": "card",
     "effect": {
       "whore": 10,
@@ -85,9 +91,10 @@
 
   "goDrunkInBar": {
     "id": "goDrunkInBar",
-    "title": "Go Drunk In Bar",
-    "description": "description",
+    "title": "Пойти в бар",
+    "description": "Там пить лучше и ламповее",
     "type": "standard",
+    "icon": "heart",
     "image": "card",
     "effect": {
       "whore": 10,
@@ -99,9 +106,10 @@
 
   "talkAboutKafka": {
     "id": "talkAboutKafka",
-    "title": "Talk About Kafka",
-    "description": "description",
+    "title": "Поговорить о КАФКЕ",
+    "description": "Выпить вина и сходить в ионотеку",
     "type": "standard",
+    "icon": "heart",
     "image": "card",
     "effect": {
       "whore": -10,
@@ -113,9 +121,10 @@
 
   "goToTheShop": {
     "id": "GoToTheShop",
-    "title": "Go to the shop",
-    "description": "description",
+    "title": "Сходить в магазин",
+    "description": "Покупки вместе, как мило",
     "type": "standard",
+    "icon": "heart",
     "image": "card",
     "effect": {
       "whore": 10,
@@ -127,9 +136,10 @@
 
   "goToPark": {
     "id": "goToPark",
-    "title": "Go to park",
-    "description": "description",
+    "title": "Погулять в парке",
+    "description": "Мило, лампово, но не для всех",
     "type": "standard",
+    "icon": "heart",
     "image": "card",
     "effect": {
       "whore": -5,

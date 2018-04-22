@@ -18,12 +18,17 @@ export default class extends Phaser.Scene {
     /** Load all assets */
     this.load.image('card', '../Assets/images/card.png');
     this.load.image('deck', '../Assets/images/deck.png');
+    /** Womabns */
     this.load.image('woman-1', '../Assets/images/woman2.png');
     this.load.image('woman-2', '../Assets/images/woman3.png');
     this.load.image('woman-3', '../Assets/images/woman4.png');
     this.load.image('woman-4', '../Assets/images/woman1.png');
-    this.load.image('background', '../Assets/images/backgroundmenu.png');
+    /** Cards */
     this.load.image('heart', '../Assets/images/heart.png');
+    this.load.image('roflan', '../Assets/images/roflan.png');
+
+
+    this.load.image('background', '../Assets/images/backgroundmenu.png');
     this.load.image('bar', '../Assets/images/sex-bar.png');
     this.load.image('bar-fill', '../Assets/images/sex-bar--success.png');
   }
@@ -34,7 +39,7 @@ export default class extends Phaser.Scene {
       id: 'startBtn',
       x: 520,
       y: 250,
-      text: 'Start game',
+      text: 'Начать свидание...',
       styles: {
         color: '#FF1E52',
         fontSize: '36px',
@@ -59,9 +64,10 @@ export default class extends Phaser.Scene {
         this.scene.start('DeckScene');
       }
     });
-    this.add.image(600, 360, 'background');
+
+    this.add.image(640, 360, 'background');
     this.add.existing(this.startButton);
-    this.add.existing(this.deckButton);
+    // this.add.existing(this.deckButton);
     
     this.input.on('gameobjectup', this.btnHandler, this);
   }

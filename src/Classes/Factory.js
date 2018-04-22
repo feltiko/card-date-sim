@@ -30,6 +30,7 @@ export default class Factory extends Phaser.GameObjects.GameObject {
         y: null,
         sprite: cardsData[value].image
       }, {
+        icon: cardsData[value].icon,
         id: cardsData[value].id,
         title: cardsData[value].title,
         description: cardsData[value].description,

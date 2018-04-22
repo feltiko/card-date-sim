@@ -14,6 +14,7 @@ export default class extends Phaser.GameObjects.Sprite {
     this.description = params.description;
     this.type = params.type;
     this.effect = params.effect;
+    this.icon = params.icon;
     this.order = -1;
 
     this.info = {
@@ -41,7 +42,7 @@ export default class extends Phaser.GameObjects.Sprite {
       this.title,
       {
         color: '#FF1E52',
-        fontSize: '22px',
+        fontSize: '18px',
         fixedWidth: '30px',
         align: 'center',
         fontFamily: 'Ourverture-script',
@@ -54,7 +55,9 @@ export default class extends Phaser.GameObjects.Sprite {
       this.scene,
       this.x,
       this.y - 30,
-      'heart'
+      this.icon
+      // 'heart',
+      // this.texture.key
     );
 
     this.info.desc = new Phaser.GameObjects.Text(
@@ -63,15 +66,17 @@ export default class extends Phaser.GameObjects.Sprite {
       this.y + 60,
       this.description,
       {
-        align: 'center',
+        align: 'left',
         color: '#FF1E52',
         fontSize: '18px',
         fontFamily: 'Ourverture-script',
-        fixedWidth: 200,
+        fixedWidth: '200px',
       }
     );
 
-    console.log(this.info.desc);
+    this.info.desc.setWordWrapWidth(
+      180
+    );
 
     this.scene.add.existing(this);
     this.scene.add.existing(this.info.title);
