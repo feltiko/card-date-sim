@@ -134,18 +134,93 @@
     }
   },
 
-  "goToPark": {
-    "id": "goToPark",
-    "title": "Погулять в парке",
-    "description": "Мило, лампово, но не для всех",
+
+  "showDick": {
+    "id": "showDick",
+    "title": "Показать член",
+    "description": "Почему бы и нет",
+    "type": "standard",
+    "icon": "heart",
+    "image": "card",
+    "effect": {
+      "whore": 100,
+      "rich": -100,
+      "wine": -100,
+      "bandit": -100
+    }
+  },
+
+  "drankBeer": {
+    "id": "drankBeer",
+    "title": "Попипить разливного пиваса",
+    "description": "И почему это называют разливной санниной?",
     "type": "standard",
     "icon": "heart",
     "image": "card",
     "effect": {
       "whore": -5,
-      "rich": -5,
-      "wine": 10,
-      "bandit": 5
+      "rich": -15,
+      "wine": 5,
+      "bandit": 10
+    }
+  },
+
+  "funnyJokesAboutCokos": {
+    "id": "funnyJokesAboutCokos",
+    "title": "Пошутить про члены",
+    "description": "Мило, лампово, но не для всех",
+    "type": "standard",
+    "icon": "heart",
+    "image": "card",
+    "effect": {
+      "whore": 0,
+      "rich": -10,
+      "wine": -5,
+      "bandit": 10
+    }
+  },
+
+  "goToCheburek": {
+    "id": "goToCheburek",
+    "title": "Сходить в чебуречную",
+    "description": "Норм место что бы пожрать",
+    "type": "standard",
+    "icon": "heart",
+    "image": "card",
+    "effect": {
+      "whore": -5,
+      "rich": -15,
+      "wine": -5,
+      "bandit": 10
+    }
+  },
+
+  "seeStars": {
+    "id": "seeStars",
+    "title": "Посмотреть на звезды",
+    "description": "Мило посидеть и посмотреть на звезды",
+    "type": "standard",
+    "icon": "heart",
+    "image": "card",
+    "effect": {
+      "whore": 0,
+      "rich": 5,
+      "wine": 15,
+      "bandit": -5
+    },
+    "seeStars": {
+      "id": "seeStars",
+      "title": "Посмотреть на звезды",
+      "description": "Мило посидеть и посмотреть на звезды",
+      "type": "standard",
+      "icon": "heart",
+      "image": "card",
+      "effect": {
+        "whore": 0,
+        "rich": 5,
+        "wine": 15,
+        "bandit": -5
+      }
     }
   }
 }

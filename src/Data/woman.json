@@ -2,24 +2,24 @@
   "whore": {
     "id": "whore",
     "type": "whore",
-    "image": "woman-1"
+    "image": "girl"
   },
 
   "rich": {
     "id": "rich",
     "type": "rich",
-    "image": "woman-2"
+    "image": "girl-2"
   },
 
   "wine": {
     "id": "wine",
     "type": "wine",
-    "image": "woman-3"
+    "image": "girl-3"
   },
 
   "bandit": {
     "id": "bandit",
     "type": "bandit",
-    "image": "woman-4"
+    "image": "girl-4"
   }
 }

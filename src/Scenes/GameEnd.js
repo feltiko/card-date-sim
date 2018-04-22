@@ -15,7 +15,7 @@ export default class extends Phaser.Scene {
 
   preload () {
     console.log('preload');
-    console.log('_________________________');
+    //console.log('_________________________');
     this.load.image('background', '../Assets/images/backgroundgame.png');
   }
 
@@ -60,7 +60,7 @@ export default class extends Phaser.Scene {
       id: 'newGame',
       x: 560,
       y: 300,
-      text: 'New Game',
+      text: 'Попробовать снова ...',
       styles: {
         color: '#FF1E52',
         fontSize: '36px',
@@ -76,7 +76,7 @@ export default class extends Phaser.Scene {
       id: 'menu',
       x: 560,
       y: 400,
-      text: 'Menu',
+      text: 'Меню',
       styles: {
         color: '#FF1E52',
         fontSize: '36px',
