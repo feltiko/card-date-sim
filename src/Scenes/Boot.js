@@ -19,10 +19,10 @@ export default class extends Phaser.Scene {
     this.load.image('card', '../Assets/images/card.png');
     this.load.image('deck', '../Assets/images/deck.png');
     /** Womabns */
-    this.load.image('woman-1', '../Assets/images/woman2.png');
-    this.load.image('woman-2', '../Assets/images/woman3.png');
-    this.load.image('woman-3', '../Assets/images/woman4.png');
-    this.load.image('woman-4', '../Assets/images/woman1.png');
+    this.load.image('girl', '../Assets/images/girl.png');
+    this.load.image('girl-2', '../Assets/images/girl-2.png');
+    this.load.image('girl-3', '../Assets/images/girl-3.png');
+    this.load.image('girl-4', '../Assets/images/girl-4.png');
     /** Cards */
     this.load.image('heart', '../Assets/images/heart.png');
     this.load.image('roflan', '../Assets/images/roflan.png');
