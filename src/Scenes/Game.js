@@ -64,7 +64,7 @@ export default class extends Phaser.Scene {
     this.gameObjects.woman.scaleY = 0.8;
 
     this.gameObjects.deck.fillDeck(
-      [...new Array(21)].map(
+      [...new Array(30)].map(
         (value, index) => {
           let card = this.factory.cards[
             Math.floor(Math.random() * this.factory.cards.length)
@@ -153,8 +153,8 @@ export default class extends Phaser.Scene {
   update (time, delta) {
     this.cardsCount = this.gameObjects.deck.length();
 
-    const x = (this.sex / 100) * 400 / 1000;
-    //Current Health / Max Health) * Max Size of Bar
+    const x = (this.sex / 100) * 100 / 100;
+
     this.gameObjects.barPink.scaleY = x;
     this.gameObjects.deckCount.setText(this.cardsCount);
 
