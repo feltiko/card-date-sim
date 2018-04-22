@@ -11,7 +11,10 @@ export default class extends Phaser.GameObjects.Sprite {
 
     this.id = params.id;
     this.type = params.type;
-    this.setInteractive();
+  }
+
+  render () {
+    this.scene.add.existing(this);
   }
 
   playSound () {
