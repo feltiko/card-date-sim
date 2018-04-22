@@ -16,9 +16,9 @@ export default class extends Phaser.Scene {
       woman: null,
       hand: null,
       score: null,
+      deckCount: null,
     };
 
-    this.score = 0;
     this.sex = 50;
   }
 
@@ -57,10 +57,12 @@ export default class extends Phaser.Scene {
     this.drawCards();
 
     this.gameObjects.score = new Phaser.GameObjects.Text(this, 50, 50, this.sex);
+    this.gameObjects.deckCount = new Phaser.GameObjects.Text(this, 50, 70, this.gameObjects.deck.deck.length);
     // TODO: recursivly add all gameobjects
     this.add.existing(this.gameObjects.deck);
     this.add.existing(this.gameObjects.woman);
     this.add.existing(this.gameObjects.score);
+    this.add.existing(this.gameObjects.deckCount);
 
     this.input.on('gameobjectup', (p, obj) => {
       if (obj.order !== -1) {
@@ -105,6 +107,7 @@ export default class extends Phaser.Scene {
 
   update (time, delta) {
     this.gameObjects.score.setText(this.sex);
+    this.gameObjects.deckCount.setText(this.gameObjects.deck.deck.length);
 
     this.scoreCheck();
   }

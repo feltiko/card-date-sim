@@ -39,7 +39,7 @@ export default class extends Phaser.GameObjects.Sprite {
     }
   }
 
-  shuffle (){
+  shuffle () {
     let currentIndex = array.length,
       temporaryValue,
       randomIndex;
