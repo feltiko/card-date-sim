@@ -208,6 +208,7 @@
       "wine": 15,
       "bandit": -5
     },
+
     "seeStars": {
       "id": "seeStars",
       "title": "Посмотреть на звезды",
@@ -220,6 +221,141 @@
         "rich": 5,
         "wine": 15,
         "bandit": -5
+      }
+    },
+
+    "goToPskov": {
+      "id": "goToPskov",
+      "title": "Поехвать в Псков",
+      "description": "Грят там фильмы интересные",
+      "type": "standard",
+      "icon": "heart",
+      "image": "card",
+      "effect": {
+        "whore": 15,
+        "rich": -5,
+        "wine": -15,
+        "bandit": -5
+      }
+    },
+
+    "takeAss": {
+      "id": "takeAss",
+      "title": "Ущипнуть за попец",
+      "description": "Он выглядит сочно",
+      "type": "standard",
+      "icon": "heart",
+      "image": "card",
+      "effect": {
+        "whore": 25,
+        "rich": -25,
+        "wine": -25,
+        "bandit": -25
+      }
+    },
+
+    "tookAbautAnime": {
+      "id": "tookAbautAnime",
+      "title": "Поговорить об Аниме",
+      "description": "Аниме в нике ... Аниме на аве ...",
+      "type": "standard",
+      "icon": "heart",
+      "image": "card",
+      "effect": {
+        "whore": -25,
+        "rich": -25,
+        "wine": -25,
+        "bandit": -25
+      }
+    },
+
+    "play": {
+      "id": "play",
+      "title": "Сыграть на гитаре",
+      "description": "ООООООО моя оборона",
+      "type": "standard",
+      "icon": "heart",
+      "image": "card",
+      "effect": {
+        "whore": 0,
+        "rich": 0,
+        "wine": 10,
+        "bandit": 5
+      }
+    },
+
+    "showMem": {
+      "id": "shoMem",
+      "title": "Показать мем",
+      "description": "Trolface",
+      "type": "standard",
+      "icon": "heart",
+      "image": "card",
+      "effect": {
+        "whore": 5,
+        "rich": 0,
+        "wine": 10,
+        "bandit": 5
+      }
+    },
+
+    "dota": {
+      "id": "dota",
+      "title": "Позвать играть в Dota 2",
+      "description": "Я паджеком на мид или фидить!",
+      "type": "standard",
+      "icon": "heart",
+      "image": "card",
+      "effect": {
+        "whore": -10,
+        "rich": -10,
+        "wine": 5,
+        "bandit": 15
+      }
+    },
+
+    "goToPotato": {
+      "id": "goToPotato",
+      "title": "Позвать на концерт Коржа",
+      "description": "Малый повзрослел! тутутутутуту",
+      "type": "standard",
+      "icon": "heart",
+      "image": "card",
+      "effect": {
+        "whore": -10,
+        "rich": -10,
+        "wine": 5,
+        "bandit": 15
+      }
+    },
+
+    "battle": {
+      "id": "battle",
+      "title": "Вызвать тян на versus",
+      "description": "Ты попросила биты помедленей ...",
+      "type": "standard",
+      "icon": "heart",
+      "image": "card",
+      "effect": {
+        "whore": -10,
+        "rich": -10,
+        "wine": 5,
+        "bandit": 15
+      }
+    },
+
+    "stih": {
+      "id": "stih",
+      "title": "Рассказать стих",
+      "description": "Типа культурный",
+      "type": "standard",
+      "icon": "heart",
+      "image": "card",
+      "effect": {
+        "whore": 10,
+        "rich": 10,
+        "wine": 15,
+        "bandit": -15
       }
     }
   }
