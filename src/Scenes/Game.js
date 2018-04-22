@@ -49,7 +49,7 @@ export default class extends Phaser.Scene {
 
     let { deck, hand, woman, score } = this.gameObjects;
 
-    this.add.image(600, 360, 'background');
+    this.add.image(640, 360, 'background');
 
     this.gameObjects.deck = new Deck({ scene, x: 150, y: 500, sprite: 'deck' });
     this.gameObjects.hand = new Hand({ scene, x: 200, y: 300, sprite: 'card' });
@@ -67,7 +67,7 @@ export default class extends Phaser.Scene {
     this.gameObjects.woman.scaleY = 0.8;
 
     this.gameObjects.deck.fillDeck(
-      [...new Array(30)].map(
+      [...new Array(21)].map(
         (value, index) => {
           let card = this.factory.cards[
             Math.floor(Math.random() * this.factory.cards.length)
