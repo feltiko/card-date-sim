@@ -19,35 +19,57 @@ export default class extends Phaser.Scene {
     this.load.image('card', '../Assets/images/card.png');
     this.load.image('deck', '../Assets/images/deck.png');
     this.load.image('woman', '../Assets/images/woman.png');
+    this.load.image('background', '../Assets/images/backgroundmenu.png');
   }
 
   create () {
     this.startButton = new Button({
       scene: this,
       id: 'startBtn',
-      x: 55,
-      y: 70,
+      x: 520,
+      y: 250,
       text: 'Start game',
       styles: {
-        backgroundColor: '#f0f',
+        color: '#FF1E52',
+        fontSize: '36px',
+        fontFamily: 'Ourverture-script',
       },
       handler: (pointer, button) => {
         this.scene.start('Game');
       }
     });
-
+    this.deckButton = new Button({
+      scene: this,
+      id: 'deckBtn',
+      x: 560,
+      y: 300,
+      text: 'Deck',
+      styles: {
+        color: '#FF1E52',
+        fontSize: '36px',
+        fontFamily: 'Ourverture-script',
+      },
+      handler: (pointer, button) => {
+        this.scene.start('DeckScene');
+      }
+    });
+    this.add.image(600, 360, 'background');
     this.add.existing(this.startButton);
+    this.add.existing(this.deckButton);
     
     this.input.on('gameobjectup', this.btnHandler, this);
   }
 
   btnHandler (pointer, item) {
     if (!item.id) return;
-
+    console.log(item.id);
     switch (item.id) {
       case 'startBtn': 
           this.startButton.handler(pointer, item);
-        break;
+          break;
+      case 'deckBtn':
+          this.deckButton.handler(pointer, item);
+          break;
       default: return;
     }
   }

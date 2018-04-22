@@ -28,9 +28,19 @@ export default class extends Phaser.Scene {
   }
 
   init () {
+<<<<<<< HEAD
   }
 
   preload () {
+=======
+    console.log('init game');
+  }
+
+  preload () {
+    console.log('preload');
+    console.log('_________________________');
+    this.load.image('background', '../Assets/images/backgroundgame.png');
+>>>>>>> d26794b0f936e294dd5d1af253f66d539a45aeed
   }
 
   create (props) {
@@ -39,6 +49,8 @@ export default class extends Phaser.Scene {
     this.factory.runFactory();
 
     let { deck, hand, woman, score } = this.gameObjects;
+
+    this.add.image(600, 360, 'background');
 
     this.gameObjects.deck = new Deck({ scene, x: 150, y: 500, sprite: 'deck' });
     this.gameObjects.hand = new Hand({ scene, x: 200, y: 300, sprite: 'card' });
