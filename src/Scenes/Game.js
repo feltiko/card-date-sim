@@ -42,12 +42,14 @@ export default class extends Phaser.Scene {
 
   create (props) {
     const scene = this;
+    this.sex = 50;
+
     this.factory = new Factory(this, 'factory');
     this.factory.runFactory();
 
     let { deck, hand, woman, score } = this.gameObjects;
 
-    this.add.image(600, 360, 'background');
+    this.add.image(640, 360, 'background');
 
     this.gameObjects.deck = new Deck({ scene, x: 150, y: 500, sprite: 'deck' });
     this.gameObjects.hand = new Hand({ scene, x: 200, y: 300, sprite: 'card' });
@@ -65,7 +67,7 @@ export default class extends Phaser.Scene {
     this.gameObjects.woman.scaleY = 0.8;
 
     this.gameObjects.deck.fillDeck(
-      [...new Array(30)].map(
+      [...new Array(21)].map(
         (value, index) => {
           let card = this.factory.cards[
             Math.floor(Math.random() * this.factory.cards.length)
@@ -88,10 +90,6 @@ export default class extends Phaser.Scene {
 
     this.drawCards();
 
-    this.gameObjects.score = new Phaser.GameObjects.Text(this, 50, 50, this.sex, {
-
-    });
-
     this.gameObjects.deckCount = new Phaser.GameObjects.Text(this, 140, 450, this.cardsCount, {
       color: '#FF1E52',
       fontSize: '22px',
@@ -110,17 +108,14 @@ export default class extends Phaser.Scene {
     this.gameObjects.barPink = new Phaser.GameObjects.Sprite(
       this,
       1100,
-      720 * 0.5,
+      720 * 0.5 + 200,
       'bar-fill'
     );
 
-    this.gameObjects.barPink.originX = 0.5;
-    this.gameObjects.barPink.originY = 1;
-
+    this.gameObjects.barPink.setOrigin(0.5, 1);
 
     this.gameObjects.woman.render();
     this.add.existing(this.gameObjects.deck);
-    this.add.existing(this.gameObjects.score);
     this.add.existing(this.gameObjects.deckCount);
     this.add.existing(this.gameObjects.barGray);
     this.add.existing(this.gameObjects.barPink);
@@ -164,7 +159,6 @@ export default class extends Phaser.Scene {
     const x = (this.sex / 100) * 400 / 1000;
     //Current Health / Max Health) * Max Size of Bar
     this.gameObjects.barPink.scaleY = x;
-    this.gameObjects.score.setText(this.sex);
     this.gameObjects.deckCount.setText(this.cardsCount);
 
     this.scoreCheck();
