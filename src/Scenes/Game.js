@@ -1,7 +1,10 @@
 import Phaser from 'phaser';
 import Factory from '../Classes/Factory';
 
+import jsonCards from "../Data/cards.json";
+
 import Deck from '../Classes/Deck';
+import Card from '../Classes/Card';
 import Woman from '../Classes/Woman';
 import Hand from '../Classes/Hand';
 
@@ -19,21 +22,22 @@ export default class extends Phaser.Scene {
       deckCount: null,
     };
 
+    this.cardsCount = 0;
     this.sex = 50;
+    this.factory = null;
   }
 
   init () {
-    console.log('init');
   }
 
   preload () {
-    console.log('preload');
-    console.log('_________________________');
   }
 
   create (props) {
     const scene = this;
-    const factory = new Factory(this);
+    this.factory = new Factory(this, 'factory');
+    this.factory.runFactory();
+
     let { deck, hand, woman, score } = this.gameObjects;
 
     this.gameObjects.deck = new Deck({ scene, x: 150, y: 500, sprite: 'deck' });
@@ -48,16 +52,29 @@ export default class extends Phaser.Scene {
 
     this.gameObjects.deck.fillDeck(
       [...new Array(30)].map(
-        (value, index) => factory.cards[Math.floor(Math.random() * factory.cards.length)]
+        (value, index) => {
+          let card = this.factory.cards[
+            Math.floor(Math.random() * this.factory.cards.length)
+          ];
+
+          return new Card(
+              { scene: this, x: 0, y: 0, sprite: 'card' },
+              {
+                id: card.id, 
+                title: card.title,
+                description: card.description,
+                type: card.type,
+                effect: card.effect,
+              },
+            );
+        }
       )
     );
-
-    console.log(this.gameObjects.deck);
 
     this.drawCards();
 
     this.gameObjects.score = new Phaser.GameObjects.Text(this, 50, 50, this.sex);
-    this.gameObjects.deckCount = new Phaser.GameObjects.Text(this, 50, 70, this.gameObjects.deck.deck.length);
+    this.gameObjects.deckCount = new Phaser.GameObjects.Text(this, 50, 70, this.cardsCount);
     // TODO: recursivly add all gameobjects
     this.add.existing(this.gameObjects.deck);
     this.add.existing(this.gameObjects.woman);
@@ -76,28 +93,13 @@ export default class extends Phaser.Scene {
   }
 
   drawCards () {
-    // const { deck, hand } = this.gameObjects
-    console.log(this);
-    
-    const drawedCards = this.gameObjects.deck.getCards(3);
-    console.log(this.gameObjects.deck.deck);
-    console.log(this.gameObjects.hand.hand);
+    const drawedCards = this.gameObjects.deck.getRandomCards(3);
     this.gameObjects.hand.setHand(drawedCards);
     this.gameObjects.hand.renderHand();
   }
 
-  remove (a) {
-    console.log(a);
-  }
-
   btnHandler (pointer, item) {
     if (!item.id) return null;
-
-    if (item.id === 'deck') {
-      this.remove(this.gameObjects.hand);
-      // console.log(this.hand.getElemById(1));
-      // 
-    }
   }
 
   scoreCheck () {
@@ -106,8 +108,10 @@ export default class extends Phaser.Scene {
   }
 
   update (time, delta) {
+    this.cardsCount = this.gameObjects.deck.length();
+
     this.gameObjects.score.setText(this.sex);
-    this.gameObjects.deckCount.setText(this.gameObjects.deck.deck.length);
+    this.gameObjects.deckCount.setText(this.cardsCount);
 
     this.scoreCheck();
   }

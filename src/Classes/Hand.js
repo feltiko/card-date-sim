@@ -26,14 +26,17 @@ export default class extends Phaser.GameObjects.Sprite {
   }
 
   renderHand () {
-    const { scene, hand, settings } = this;
+    const { settings } = this;
 
-    hand.forEach((value, index) => {
+    this.hand.forEach((value, index) => {
       value.x = settings[index].x;
       value.y = settings[index].y;
       value.order = settings[index].order;
+      value.scene = this.scene;
+      value.parentContainer = null;
 
-      scene.add.existing(value)
+      const obj = this.scene.add.existing(value);
+      console.log(obj);
     });
   }
 

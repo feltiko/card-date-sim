@@ -12,11 +12,9 @@ export default class extends Phaser.Scene {
   }
 
   init () {
-    console.log('init');
   }
 
   preload () {
-    console.log('preload');
     /** Load all assets */
     this.load.image('card', '../Assets/images/card.png');
     this.load.image('deck', '../Assets/images/deck.png');

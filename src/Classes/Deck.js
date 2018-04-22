@@ -11,48 +11,37 @@ export default class extends Phaser.GameObjects.Sprite {
 
     this.deck = [];
     this.id = 'deck';
-    this.setInteractive();
   }
 
   fillDeck (cards) {
-    this.deck = cards;
+    cards.forEach((value, index) => {
+      this.deck.push(value);
+    }, this);
   }
 
-  // TODO: works worng, sometimes return a undefined
-  getCards (length) {
-    let cards = [];
+  length () {
+    return this.deck.length;
+  }
 
-    if (length < this.deck.length){
-      for (let i = 0; i < length; i++){
-        cards.push(this.deck.pop());
-      }
-
-      return cards;
-    } else if (this.deck.length > 0) {
-      for (let i = 0; i < this.deck.length; i++){
-        cards.push(this.deck.pop());
-      }
-      
-      return cards;
+  getRandomCards () {
+    if (3 >= this.deck.length) {
+      return this.deck;
     } else {
-      //gameOver
-    }
-  }
+      return [...new Array(3)].map((value, index) => {
+        const rnd = Math.floor(Math.random() * this.deck.length);
+        const elem = this.deck[rnd];
+        elem.scene = this.scene;
 
-  shuffle () {
-    let currentIndex = array.length,
-      temporaryValue,
-      randomIndex;
+        this.deck.splice(rnd, 1);
 
-    while (0 !== currentIndex) {
+        this.deck.forEach((value, index) => {
+          value.scene = value.scene;
+        });
 
+        console.log(this.deck)
 
-      randomIndex = Math.floor(Math.random() * currentIndex);
-      currentIndex -= 1;
-
-      temporaryValue = this.deck[currentIndex];
-      this.deck[currentIndex] = this.deck[randomIndex];
-      this.deck[randomIndex] = temporaryValue;
+	      return elem;
+      });
     }
   }
 
