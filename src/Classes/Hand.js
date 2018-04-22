@@ -56,6 +56,7 @@ export default class extends Phaser.GameObjects.Sprite {
 
   useCard (order, womanType) {
     const effectValue = this.hand[order].effect[womanType];
+    console.log(womanType);
     this.removeCards();
 
     return effectValue;

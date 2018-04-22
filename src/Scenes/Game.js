@@ -30,12 +30,9 @@ export default class extends Phaser.Scene {
   }
 
   init () {
-    console.log('init game');
   }
 
   preload () {
-    console.log('preload');
-    console.log('_________________________');
     this.load.image('background', '../Assets/images/backgroundgame.png');
   }
 
@@ -123,7 +120,7 @@ export default class extends Phaser.Scene {
     this.input.on('gameobjectup', (p, obj) => {
       if (obj.order !== -1) {
         const { order } = obj;
-        const dmg = this.gameObjects.hand.useCard(order, 'whore');
+        const dmg = this.gameObjects.hand.useCard(order, this.gameObjects.woman.type);
         this.sex += dmg;
 
         this.drawCards();
